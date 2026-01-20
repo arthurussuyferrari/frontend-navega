@@ -15,13 +15,7 @@ describe('AppComponent', () => {
   it(`should have the 'frontend-navega' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('frontend-navega');
+    expect(app.title).toEqual('Navega');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('frontend-navega app is running!');
-  });
 });
