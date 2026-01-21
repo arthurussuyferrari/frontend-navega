@@ -1,1 +1,36 @@
-<p>login works!</p>
+<main class="login">
+  <section class="login__container">
+    <div class="login__panel">
+  
+      <header class="login__logo">
+        <img src="/assets/images/logo.png" title="Navega Dashboard" alt="navega_dashboard_logo">
+      </header>
+  
+      <form class="login__content">
+
+        <div class="login__header">
+          <h2 class="login__title">Boas-vindas ao Portal!<br> Para começar, qual seu email ou CPF?</h2>
+          <p class="login__text">Precisamos desta confirmação para dar <br> início ao seu acesso.</p>
+        </div>
+  
+        <div class="login__window">
+          <div class="login__fields">
+            <app-input label="Email ou CPF" type="text"></app-input>
+            <app-input-password></app-input-password>
+          </div>
+
+          <div class="login__actions">
+            <app-button text="Acessar" type="submit"></app-button>
+            <p class="login__forgot-password">Esqueceu a senha? <a class="login__link"  routerLink="/forgot-password">Acesse aqui</a></p>
+            <span  class="login__subtext">Versão 0.01</span>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+  </section> 
+
+  <section class="login__background">
+    <app-background></app-background>
+  </section>
+</main>
