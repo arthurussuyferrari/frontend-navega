@@ -1,9 +1,8 @@
 <div class="monthly">
   <div class="monthly__container">
-
     <div class="monthly__title">
-        <h6>Total em contribuições</h6>
-        <h4>{{ total }}</h4>
+      <h6>Total em contribuições</h6>
+      <h4>{{ total | currency:'BRL' }}</h4>
     </div>
 
     <div class="monthly__canvas">
@@ -16,32 +15,39 @@
     </div>
 
     <div class="monthly__legend">
-      <div class="monthly__values ">
-          <div class="monthly__wrapper">
-              <span class="monthly__dot monthly__dot--pink"></span>
-              <p>Contribuição voluntária</p>
-          </div>
-          <strong>{{ voluntary }}</strong>
+      <div class="monthly__values">
+        <div class="monthly__wrapper">
+          <p>Contribuição Mensal</p>
+        </div>
+        <strong>{{ valorMensal | currency:'BRL' }}</strong>
       </div>
+    </div>
 
-      <div class="monthly__values ">
-          <div class="monthly__wrapper">
-              <span class="monthly__dot monthly__dot--purple"></span>
-              <p>Contribuição voluntária</p>
-          </div>
-          <strong>{{ voluntary }}</strong>
+    <div class="monthly__legend">
+      <div class="monthly__values">
+        <div class="monthly__wrapper">
+          <p>Contribuição voluntária</p>
+        </div>
+        <strong>{{ valorVoluntaria | currency:'BRL' }}</strong>
       </div>
     </div>
   </div>
-  
-  <div class="monthly__expander">
-    <app-expansion-panel></app-expansion-panel>
-  </div>
-  <div class="monthly__expander">
-    <app-expansion-panel></app-expansion-panel>
+
+  <div class="monthly__expander" *ngFor="let contribution of contributions">
+    <app-expansion-panel
+      [title]="contribution.title"
+      [value]="contribution.value"
+      [percentage]="contribution.percentage"
+      (onChangeValue)="updateContribution(contribution.id, $event)">
+    </app-expansion-panel>
   </div>
 
   <div class="monthly__action">
-    <app-button type="button" text="Incluir contribuição" color="primary"></app-button>
+    <app-button
+      type="button"
+      text="Incluir contribuição"
+      (onClick)="addContribution()"
+      color="primary">
+    </app-button>
   </div>
 </div>

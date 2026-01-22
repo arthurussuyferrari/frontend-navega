@@ -1,0 +1,25 @@
+<form [formGroup]="form" class="contribuitionModal">
+  <h2 class="contribuitionModal__title">{{ title }}</h2>
+
+  <ng-container *ngIf="isNew">
+    <label>
+      <input type="radio" formControlName="type" value="mensal"> Mensal
+    </label>
+    <label>
+      <input type="radio" formControlName="type" value="voluntaria"> Voluntária
+    </label>
+  </ng-container>
+
+  <app-input label="Valor" type="number" formControlName="value"></app-input>
+  <app-input
+    *ngIf="form.get('type')?.value === 'mensal'"
+    label="Porcentagem"
+    type="number"
+    formControlName="percentage">
+  </app-input>
+
+  <div class="contribuitionModal__actions">
+    <app-button text="Cancelar" type="button" color="basic" (onClick)="cancel()"></app-button>
+    <app-button text="Salvar" type="button" color="primary" (onClick)="save()" [disabled]="!form.valid"></app-button>
+  </div>
+</form>

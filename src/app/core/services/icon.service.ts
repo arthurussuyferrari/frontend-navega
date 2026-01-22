@@ -37,6 +37,5 @@ export class IconService {
       );
     });
 
-    console.log('IconService carregado');
   }
 }

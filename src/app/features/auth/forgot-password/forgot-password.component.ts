@@ -38,10 +38,6 @@ export class ForgotPasswordComponent {
   }
 
   submit() {
-    const value = this.formForgot.get('emailOrCpf')?.value;
-    
-    console.log('Recuperação para:', value);
-
     alert('Se existir uma conta com esse e-mail ou CPF, você receberá instruções por e-mail.');
     this.router.navigate(['/login']);
   }
