@@ -29,7 +29,7 @@ export class UrlPageTextService {
       case 'request-benefit': return 'Solicitar Benefício';
       case 'regressive-statement': return 'Extrato Regressivo';
       case 'information': return 'Informações';
-      case '': return 'Contribuição Mensal'; // rota padrão
+      case '': return 'Contribuição Mensal'; 
       default: return 'Página';
     }
   }

@@ -6,7 +6,7 @@
         <img src="/assets/images/logo.png" title="Navega Dashboard" alt="navega_dashboard_logo">
       </header>
   
-      <form class="login__content">
+      <form class="login__content" [formGroup]="formLogin" (ngSubmit)="login()">
 
         <div class="login__header">
           <h2 class="login__title">Boas-vindas ao Portal!<br> Para começar, qual seu email ou CPF?</h2>
@@ -15,8 +15,8 @@
   
         <div class="login__window">
           <div class="login__fields">
-            <app-input label="Email ou CPF" type="text"></app-input>
-            <app-input-password></app-input-password>
+            <app-input label="Email ou CPF" type="text" formControlName="login"></app-input>
+            <app-input-password formControlName="password"></app-input-password>
           </div>
 
           <div class="login__actions">
