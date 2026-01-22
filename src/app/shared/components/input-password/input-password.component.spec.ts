@@ -1,5 +1,5 @@
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InputPasswordComponent } from './input-password.component';
 
 describe('InputPasswordComponent', () => {
@@ -8,7 +8,7 @@ describe('InputPasswordComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [InputPasswordComponent]
+      imports: [InputPasswordComponent, NoopAnimationsModule]
     });
     fixture = TestBed.createComponent(InputPasswordComponent);
     component = fixture.componentInstance;

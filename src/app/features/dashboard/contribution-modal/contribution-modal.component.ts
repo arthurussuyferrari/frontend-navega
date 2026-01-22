@@ -47,6 +47,14 @@ export class ContributionModalComponent {
     if (data.type === 'voluntaria') {
       this.form.get('percentage')?.disable();
     }
+
+    this.form.get('type')?.valueChanges.subscribe(value => {
+      if (value === 'voluntaria') {
+        this.form.get('percentage')?.disable();
+      } else {
+        this.form.get('percentage')?.enable();
+      }
+    });
   }
 
   cancel() {
@@ -58,4 +66,6 @@ export class ContributionModalComponent {
       this.dialogRef.close(this.form.value);
     }
   }
+
+  
 }
