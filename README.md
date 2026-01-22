@@ -1,27 +1,74 @@
-# FrontendNavega
+Frontend Navega
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Este é o frontend do projeto Navega, desenvolvido em Angular 16. Ele apresenta a interface de gerenciamento de contribuições, exibindo totais, gráficos de doughnut, contribuições mensais e voluntárias, e permite a inclusão e edição de contribuições via modal.
 
-## Development server
+Funcionalidades principais
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Visualização do total de contribuições.
 
-## Code scaffolding
+Gráfico de doughnut separando contribuições mensais e voluntárias.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Listagem detalhada de cada contribuição.
 
-## Build
+Inclusão e alteração de contribuições através de modais.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Componentes reutilizáveis como botões e painéis expansíveis.
 
-## Running unit tests
+Integração com Angular Material e ng2-charts para UI e gráficos.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Pré-requisitos
 
-## Running end-to-end tests
+Certifique-se de ter instalado:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Node.js (versão 18 LTS ou compatível)
 
-## Further help
+npm (geralmente vem com Node.js)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular CLI (npm install -g @angular/cli)
+
+Instalação
+
+Clone o repositório:
+
+git clone <URL_DO_REPO>
+cd frontend-navega
+
+Instale as dependências:
+
+npm install
+
+Executando o projeto
+
+Para rodar a aplicação em modo de desenvolvimento:
+
+npm start
+
+A aplicação estará disponível em http://localhost:4200/. Qualquer alteração nos arquivos será recarregada automaticamente.
+
+Para gerar uma versão de produção:
+
+npm run build
+
+Os arquivos compilados ficarão na pasta dist/.
+
+Testes
+
+O projeto utiliza Jasmine e Karma para testes unitários. Para rodar todos os testes:
+
+npm test
+
+Estrutura de componentes
+
+MonthlyContributionComponent: exibe o total, o gráfico e as contribuições detalhadas.
+
+ContributionModalComponent: modal para adicionar ou alterar contribuições.
+
+ButtonComponent e InputComponent: componentes reutilizáveis para botões e inputs.
+
+ExpansionPanelComponent: painel expansível para cada contribuição.
+
+Observações
+
+A interface segue o protótipo fornecido, com cores diferenciando contribuições mensais (rosa) e voluntárias (roxo).
+
+Todos os cálculos de totais e valores são feitos automaticamente ao adicionar ou atualizar contribuições.
