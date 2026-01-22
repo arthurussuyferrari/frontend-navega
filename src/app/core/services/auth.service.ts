@@ -1,18 +1,44 @@
-import { Injectable } from "@angular/core"
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+interface UserCredentials {
+  login: string;
+  password: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-    private logged: boolean = true
 
-    isAuthenticated(): boolean {
-        return this.logged
+  private mockAccount: UserCredentials = {
+    login: 'navega@navega.com',
+    password: 'navega'
+  };
+
+  private sessionActive: boolean = false;
+
+  constructor(private router: Router) {}
+
+  hasActiveSession(): boolean {
+    return this.sessionActive;
+  }
+
+  signIn(username: string, password: string): Observable<boolean> {
+    const valid = username === this.mockAccount.login && password === this.mockAccount.password;
+
+    if (valid) {
+      this.sessionActive = true;
+      localStorage.setItem('sessionToken', 'mock-session-token');
     }
 
-    login() {
-        this.logged = true
-    }
+    return of(valid);
+  }
 
-    logout() {
-        this.logged = false
-    }
+  signOut(): void {
+    this.sessionActive = false;
+    localStorage.removeItem('sessionToken');
+    this.router.navigate(['/login']);
+  }
 }
