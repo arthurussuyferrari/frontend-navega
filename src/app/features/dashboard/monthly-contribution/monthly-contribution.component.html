@@ -1,1 +1,47 @@
-<p>monthly-contribution works!</p>
+<div class="monthly">
+  <div class="monthly__container">
+
+    <div class="monthly__title">
+        <h6>Total em contribuições</h6>
+        <h4>{{ total }}</h4>
+    </div>
+
+    <div class="monthly__canvas">
+      <canvas
+        baseChart
+        type="doughnut"
+        [data]="chartData"
+        [options]="chartOptions">
+      </canvas>
+    </div>
+
+    <div class="monthly__legend">
+      <div class="monthly__values ">
+          <div class="monthly__wrapper">
+              <span class="monthly__dot monthly__dot--pink"></span>
+              <p>Contribuição voluntária</p>
+          </div>
+          <strong>{{ voluntary }}</strong>
+      </div>
+
+      <div class="monthly__values ">
+          <div class="monthly__wrapper">
+              <span class="monthly__dot monthly__dot--purple"></span>
+              <p>Contribuição voluntária</p>
+          </div>
+          <strong>{{ voluntary }}</strong>
+      </div>
+    </div>
+  </div>
+  
+  <div class="monthly__expander">
+    <app-expansion-panel></app-expansion-panel>
+  </div>
+  <div class="monthly__expander">
+    <app-expansion-panel></app-expansion-panel>
+  </div>
+
+  <div class="monthly__action">
+    <app-button type="button" text="Incluir contribuição" color="primary"></app-button>
+  </div>
+</div>

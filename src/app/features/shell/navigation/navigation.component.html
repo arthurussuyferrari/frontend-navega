@@ -1,0 +1,34 @@
+<div class="navigation">
+  <div class="navigation__header">
+    <img src="/assets/images/icons/address-card.png" alt="">
+    <div>
+        <h2 class="navigation__title">Meu plano</h2>
+        <p class="navigation__text">O que você quer fazer?</p>
+    </div>
+  </div>
+
+<mat-nav-list>
+  <a
+    mat-list-item
+    class="navigation__item"
+    *ngFor="let item of menuItens"
+    [routerLink]="item.route"
+    routerLinkActive="active"
+    (click)="handleCloseDrawer()"
+    >
+
+    <div class="navigation__content">
+      <div class="navigation__iconWrap">
+        <mat-icon class="navigation__icon" [svgIcon]="item.iconName"></mat-icon>
+        <p class="navigation__label">{{ item.label }}</p>
+      </div>
+      <mat-icon class="navigation__icon" svgIcon="angle-right">
+        navigate_next
+      </mat-icon>
+    </div>
+
+
+  </a>
+</mat-nav-list>
+
+</div>

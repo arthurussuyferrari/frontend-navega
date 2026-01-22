@@ -1,1 +1,13 @@
-<app-header></app-header>
+
+<app-header (toggle)="toggleDrawer($event)" (refresh)="refreshData()" [isDrawerOpened]="isDrawerOpened"></app-header>
+
+<mat-drawer-container class="container">
+    <mat-drawer class="container__navigation" #drawer [mode]="drawerMode" [opened]="isDrawerOpened">
+         <app-navigation (closeDrawer)="closeDrawer()"></app-navigation>
+    </mat-drawer>
+    <mat-drawer-content class="container__main">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-loading *ngIf="isLoading"></app-loading>
