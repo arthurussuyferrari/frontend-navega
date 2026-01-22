@@ -1,6 +1,7 @@
 .button {
     width: 100%;
     text-transform: uppercase;
+    font-weight: 900;
 }
 
 
@@ -9,7 +10,33 @@
   --mdc-protected-button-label-text-color: #fff;
 }
 
-:host ::ng-deep .mdc-button__label {
-  color: #FFF!important;
+:host ::ng-deep .mat-mdc-raised-button .mdc-button__label {
+  font-weight: bold!important;
 }
 
+:host ::ng-deep .mat-mdc-raised-button.mat-basic .mdc-button__label {
+  color: #1AAAB2 !important;
+}
+
+
+:host ::ng-deep .mat-mdc-raised-button.mat-primary .mdc-button__label {
+  color: #FFF !important;
+}
+
+.button.mat-basic:focus,
+.button.mat-basic:active {
+  background-color: #d0d0d0;
+  outline: none;
+  box-shadow: none;
+}
+
+::ng-deep .mat-mdc-raised-button.mat-basic:hover {
+  box-shadow: none!important;
+  background: transparent!important;
+}
+
+::ng-deep .button.mat-basic {
+  background-color: #f0f0f0;
+  color: #333;
+  box-shadow: none;
+}

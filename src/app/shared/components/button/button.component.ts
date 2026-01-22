@@ -13,4 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 export class ButtonComponent {
   @Input() text!: string;
   @Input() type!: string;
+  @Input() color: string ='primary'
+  
 }

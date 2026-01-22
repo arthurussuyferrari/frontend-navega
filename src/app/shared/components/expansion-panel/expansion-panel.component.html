@@ -1,0 +1,28 @@
+<mat-accordion>
+  <mat-expansion-panel #panel hideToggle>
+    <mat-expansion-panel-header>
+      <div class="expansion__header">
+        <div class="expansion__title">
+          <img src="assets/images/icons/database.png">
+          <p> Contribuição Mensal</p>
+        </div>
+        <mat-icon svgIcon="angle-right" class="expansion__icon" [ngClass]="{'expansion__icon--up': panel.expanded}">
+          navigate_next
+        </mat-icon>
+      </div>
+    </mat-expansion-panel-header>
+    <div class="expansion__wrapper">
+      <div class="expansion__content">
+        <p>Valor da contribuição</p>
+        <strong>R$ 500,00</strong>
+      </div>
+      <div class="expansion__content">
+        <p>Porcentagem do salário</p>
+        <strong>5%</strong>
+      </div>
+      <div class="expansion__button">
+        <app-button type="button" text="Alterar Contribuição" color="basic"></app-button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

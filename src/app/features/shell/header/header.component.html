@@ -13,12 +13,19 @@
           <mat-icon class="material-symbols-outlined">visibility</mat-icon>
         </a>
         <a>
-          <mat-icon class="material-symbols-outlined">repeat</mat-icon>
+          <mat-icon class="material-symbols-outlined" (click)="refreshPage()">repeat</mat-icon>
         </a>
       </div>
     </div>
 
     <div class="header__navigation">
-      <mat-icon class="header__icon--arrow">arrow_back</mat-icon><p class="header__link">Meu Plano</p>
+      <div class="header__action" (click)="handleArrowDrawer()">
+        <mat-icon class="header__icon--arrow" [class.header__icon--arrow--right]="!isDrawerOpened">
+          arrow_back
+        </mat-icon>
+        <p class="header__link">
+          {{ pageText$ | async }}
+        </p>
+      </div>
     </div>
 </header>

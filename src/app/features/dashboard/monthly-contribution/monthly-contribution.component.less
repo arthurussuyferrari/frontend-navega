@@ -1,0 +1,63 @@
+@import 'styles/variables/_breakpoints';
+
+.monthly {
+    padding: 16px 0;
+    &__container {
+        padding: 16px 0;
+        border-bottom: 1px solid #BDBDBD;
+    }
+
+    &__canvas {
+        width: 150px;
+        height: 150px;
+        margin: 16px auto;
+    }
+
+    &__legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__values {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+        &--pink {
+            background: #E62E6B;
+        }
+
+        &--purple {
+            background: #5B4CC4;
+        }
+    }
+
+    &__expander {
+        margin-bottom: 12px;
+    }
+
+    &__action {
+        margin: 0 auto;
+        width: 312px;
+    }
+
+    @media(max-width: @mobile) {
+        &__action {
+            width: 100%;
+        }
+    }
+}
