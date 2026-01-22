@@ -40,7 +40,6 @@ export class LoginComponent {
 
     this.authService.signIn(login, password).subscribe(success => {
       if (success) {
-        console.log(`sucesso`)
         this.router.navigate(['/app']); 
       } else {
         alert('Login ou senha incorretos');

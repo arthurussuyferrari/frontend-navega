@@ -4,7 +4,7 @@
       <div class="expansion__header">
         <div class="expansion__title">
           <img src="assets/images/icons/database.png">
-          <p> Contribuição Mensal</p>
+          <p>{{ title }}</p>
         </div>
         <mat-icon svgIcon="angle-right" class="expansion__icon" [ngClass]="{'expansion__icon--up': panel.expanded}">
           navigate_next
@@ -14,14 +14,14 @@
     <div class="expansion__wrapper">
       <div class="expansion__content">
         <p>Valor da contribuição</p>
-        <strong>R$ 500,00</strong>
+        <strong>{{ value | currency:'BRL' }}</strong>
       </div>
-      <div class="expansion__content">
+      <div class="expansion__content" *ngIf="title === 'Contribuição Mensal'">
         <p>Porcentagem do salário</p>
-        <strong>5%</strong>
+        <strong>{{ percentage }}%</strong>
       </div>
       <div class="expansion__button">
-        <app-button type="button" text="Alterar Contribuição" color="basic"></app-button>
+        <app-button type="button" text="Alterar Contribuição" color="basic" (onClick)="changeContribution()"></app-button>
       </div>
     </div>
   </mat-expansion-panel>

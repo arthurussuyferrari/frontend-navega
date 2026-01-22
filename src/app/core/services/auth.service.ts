@@ -19,12 +19,14 @@ export class AuthService {
 
   private sessionActive: boolean = false;
 
-  constructor(private router: Router) {}
-
-  hasActiveSession(): boolean {
-    return this.sessionActive;
+  constructor(private router: Router) {
+    this.sessionActive = !!localStorage.getItem('sessionToken');
   }
 
+  hasActiveSession(): boolean {
+    return !!localStorage.getItem('sessionToken');
+  }
+  
   signIn(username: string, password: string): Observable<boolean> {
     const valid = username === this.mockAccount.login && password === this.mockAccount.password;
 

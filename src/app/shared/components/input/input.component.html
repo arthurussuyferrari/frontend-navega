@@ -6,7 +6,7 @@
          [disabled]="disabled"
          (input)="handleInput($event)"
          (blur)="handleBlur()">
-  <mat-icon class="material-symbols-outlined input__icon">
-    check_circle
+  <mat-icon *ngIf="icon" class="material-symbols-outlined input__icon">
+    {{ icon }}
   </mat-icon>
 </mat-form-field>
